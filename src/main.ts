@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { env } from "@config/env.js";
+import { env } from "@config/env.ts";
 
 const fastify = Fastify({
     logger: true,

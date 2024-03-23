@@ -3,7 +3,6 @@
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig to read more about this file */
         /* Projects */
-        "incremental": false,
         "target": "ESNext",
         /* Modules */
         "module": "NodeNext",
@@ -31,11 +30,12 @@
             ]
         },
         /* Emit */
-        "outDir": "dist",
+        "noEmit": true,
         "removeComments": true,
         "lib": [
             "ESNext"
         ],
+        "allowImportingTsExtensions": true,
         /* Interop Constraints */
         "isolatedModules": true,
         "esModuleInterop": true,

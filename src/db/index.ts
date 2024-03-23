@@ -1,4 +1,4 @@
-import { env } from "@config/env.js";
+import { env } from "@config/env.ts";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Client } from "pg";
 
