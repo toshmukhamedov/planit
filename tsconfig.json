@@ -10,24 +10,12 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "paths": {
-            "@src/*": [
-                "./*"
-            ],
-            "@config/*": [
-                "./config/*"
-            ],
-            "@modules/*": [
-                "./modules/*"
-            ],
-            "@utils/*": [
-                "./utils/*"
-            ],
-            "@test/*": [
-                "./test/*"
-            ],
-            "@db/*": [
-                "./db/*"
-            ]
+            "@src/*": ["./*"],
+            "@config/*": ["./config/*"],
+            "@modules/*": ["./modules/*"],
+            "@utils/*": ["./utils/*"],
+            "@test/*": ["./test/*"],
+            "@db/*": ["./db/*"]
         },
         /* Emit */
         "noEmit": true,
