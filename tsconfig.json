@@ -3,6 +3,7 @@
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig to read more about this file */
         /* Projects */
+        "incremental": false,
         "target": "ESNext",
         /* Modules */
         "module": "NodeNext",
@@ -10,20 +11,31 @@
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "paths": {
-            "@src/*": ["./*"],
-            "@config/*": ["./config/*"],
-            "@modules/*": ["./modules/*"],
-            "@utils/*": ["./utils/*"],
-            "@test/*": ["./test/*"],
-            "@db/*": ["./db/*"]
+            "@src/*": [
+                "./*"
+            ],
+            "@config/*": [
+                "./config/*"
+            ],
+            "@modules/*": [
+                "./modules/*"
+            ],
+            "@utils/*": [
+                "./utils/*"
+            ],
+            "@test/*": [
+                "./test/*"
+            ],
+            "@db/*": [
+                "./db/*"
+            ]
         },
         /* Emit */
-        "noEmit": true,
+        "outDir": "dist",
         "removeComments": true,
         "lib": [
             "ESNext"
         ],
-        "allowImportingTsExtensions": true,
         /* Interop Constraints */
         "isolatedModules": true,
         "esModuleInterop": true,

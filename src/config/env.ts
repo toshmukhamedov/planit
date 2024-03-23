@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AppStage } from "@utils/enums.ts";
+import { AppStage } from "@utils/enums.js";
 
 const schema = z.object({
     PORT: z.number({ coerce: true }).default(3000),
