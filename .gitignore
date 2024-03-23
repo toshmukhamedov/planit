@@ -1,0 +1,17 @@
+# heaviest object in the universe
+node_modules
+
+# build
+dist
+
+# logs
+*.log
+
+# os specific
+.DS_Store
+
+# env
+.env
+
+# incremental compilation
+.tsbuildinfo
