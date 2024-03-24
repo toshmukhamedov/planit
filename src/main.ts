@@ -1,15 +1,13 @@
 import { env } from "@config/env.ts";
-import { db } from "@db/client.ts";
 import Fastify from "fastify";
-import { users } from "@db/schema/users.ts";
+import { loggerOptions } from "./config/logging.ts";
 
 const fastify = Fastify({
-    logger: true,
+    logger: loggerOptions[env.NODE_ENV],
 });
 
 // Declare a route
 fastify.get("/", async (request, reply) => {
-    console.info(await db.select().from(users))
     reply.send({ hello: "world" });
 });
 
@@ -20,5 +18,3 @@ try {
     console.error(err);
     process.exit(1);
 }
-    
-console.info("DONE");

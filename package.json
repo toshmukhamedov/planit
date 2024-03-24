@@ -10,8 +10,8 @@
     "build": "tsc",
     "start": "node --import tsx/esm src/main.ts",
     "dev": "tsx watch --env-file .env src/main.ts",
-    "lint": "biome lint",
-    "format": "biome format",
+    "lint": "biome lint --apply src",
+    "format": "biome format --write src",
     "migration:generate": "drizzle-kit generate:pg",
     "migration:push": "drizzle-kit push:pg",
     "migration:up": "drizzle-kit up:pg",
@@ -45,6 +45,7 @@
     "@types/pg": "8.11.4",
     "drizzle-kit": "0.20.14",
     "jest": "29.7.0",
+    "pino-pretty": "11.0.0",
     "tsx": "4.7.1",
     "typescript": "5.4.3"
   }
