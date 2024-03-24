@@ -17,7 +17,4 @@ if (!result.success) {
     process.exit(1);
 }
 
-// FIXME: Testing purpose (It'll be removed after a while)
-console.info("LOADED");
-
 export const env: Env = result.data;
