@@ -6,7 +6,7 @@
   "formatter": {
     "enabled": true,
     "lineWidth": 120,
-    "indentSize": 4,
+    "indentWidth": 4,
     "indentStyle": "space"
   },
   "linter": {

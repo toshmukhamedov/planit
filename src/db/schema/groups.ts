@@ -6,8 +6,10 @@ export const groups = pgTable("groups", {
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 64 }).notNull(),
     image: varchar("image", { length: 256 }),
-    userId: integer("user_id").references(() => users.id).notNull(),   
-    ...base
+    userId: integer("user_id")
+        .references(() => users.id)
+        .notNull(),
+    ...base,
 });
 
 export type Group = typeof groups.$inferSelect; // return type when queried

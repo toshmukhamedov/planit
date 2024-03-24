@@ -6,7 +6,7 @@ export const users = pgTable("users", {
     name: varchar("name", { length: 64 }).notNull(),
     surname: varchar("surname", { length: 64 }),
     image: varchar("image", { length: 256 }),
-    ...base
+    ...base,
 });
 
 export type User = typeof users.$inferSelect; // return type when queried
