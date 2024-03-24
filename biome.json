@@ -25,5 +25,16 @@
     "ignore": [
       "node_modules"
     ]
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "json": {
+    "formatter": {
+      "enabled": false
+    }
   }
 }
