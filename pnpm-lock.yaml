@@ -23,7 +23,7 @@ devDependencies:
     specifier: 1.6.2
     version: 1.6.2
   '@types/node':
-    specifier: ^20.11.30
+    specifier: 20.11.30
     version: 20.11.30
   '@types/pg':
     specifier: 8.11.4
@@ -35,7 +35,7 @@ devDependencies:
     specifier: 29.7.0
     version: 29.7.0(@types/node@20.11.30)
   pino-pretty:
-    specifier: ^11.0.0
+    specifier: 11.0.0
     version: 11.0.0
   tsx:
     specifier: 4.7.1
