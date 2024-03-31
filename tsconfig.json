@@ -1,12 +1,10 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig.json",
     "compilerOptions": {
-        /* Visit https://aka.ms/tsconfig to read more about this file */
         /* Projects */
         "target": "ESNext",
         /* Modules */
         "module": "NodeNext",
-        "rootDir": "src",
         "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "paths": {

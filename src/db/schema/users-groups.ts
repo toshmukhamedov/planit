@@ -1,7 +1,7 @@
-import { integer, pgTable, serial } from "drizzle-orm/pg-core";
-import { users } from "./users.ts";
-import { groups } from "./groups.ts";
 import { base } from "@utils/base.schema.ts";
+import { integer, pgTable, serial } from "drizzle-orm/pg-core";
+import { groups } from "./groups.ts";
+import { users } from "./users.ts";
 
 export const usersGroups = pgTable("users_groups", {
     id: serial("id").primaryKey(),
