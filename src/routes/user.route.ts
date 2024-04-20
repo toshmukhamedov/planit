@@ -1,6 +1,11 @@
 import type { FastifyPluginAsync } from "fastify";
+import {SESClient} from "@aws-sdk/client-ses";
 
-const userRoutes: FastifyPluginAsync = async (fastify, options) => {
+const client = new SESClient({
+    region: "us-east-1",
+});
+
+const userRoutes: FastifyPluginAsync = async (fastify) => {
     fastify.post("/users", async (request, reply) => {
         reply.send({ hello: "post" });
     });

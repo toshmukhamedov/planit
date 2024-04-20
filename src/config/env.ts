@@ -5,6 +5,13 @@ const schema = z.object({
     PORT: z.number({ coerce: true }).default(3000),
     DB_URL: z.string().url(),
     NODE_ENV: z.enum([AppStage.DEV, AppStage.TEST, AppStage.PROD]),
+    JWT_SECRET: z.string(),
+    JWT_EXPIRES_IN: z.string(),
+    AWS_SES_REGION: z.string(),
+    AWS_SES_SECRET_ACCESS_KEY: z.string(),
+    AWS_SES_ACCESS_KEY_ID: z.string(),
+    AWS_SES_SUBJECT: z.string(),
+    AWS_SES_SOURCE: z.string(),
 });
 
 type Env = z.infer<typeof schema>;
