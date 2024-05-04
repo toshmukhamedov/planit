@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "shopping-list",
+  "name": "planit",
   "version": "0.1.0-pre-alpha",
-  "description": "Shopping list",
+  "description": "PlanIt",
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "build": "tsc",
     "start": "node --import tsx/esm src/main.ts",
     "dev": "tsx watch --env-file .env src/main.ts",
+    "send": "tsx src/integrations/aws-ses.ts",
     "quality": "biome check --apply src",
     "migration:generate": "drizzle-kit generate:pg",
     "migration:push": "drizzle-kit push:pg",
@@ -22,18 +23,17 @@
     "url": "git+https://github.com/OpenCraftLab/shopping-list.git"
   },
   "keywords": [
-    "shopping",
-    "list"
+    "planit"
   ],
   "author": "OpenCraftLab",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpenCraftLab/shopping-list/issues"
+    "url": "https://github.com/OpenCraftLab/planit/issues"
   },
-  "homepage": "https://github.com/OpenCraftLab/shopping-list#readme",
+  "homepage": "https://github.com/OpenCraftLab/planit#readme",
   "packageManager": "pnpm@8.15.5",
   "dependencies": {
-    "@aws-sdk/client-ses": "3.552.0",
+    "@aws-sdk/client-sesv2": "3.569.0",
     "@fastify/cors": "9.0.1",
     "@fastify/helmet": "11.1.1",
     "@fastify/jwt": "8.0.0",

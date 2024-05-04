@@ -5,11 +5,11 @@ import { env } from "./env.ts";
 import { AppStage } from "@src/utils/enums.ts";
 
 export async function registerSwagger(fastify: FastifyInstance) {
-    if (env.NODE_ENV !== AppStage.PROD) {
+    if (env.NODE_ENV !== AppStage.Prod) {
         await fastify.register(swagger, {
             openapi: {
                 info: {
-                    title: "Shopping List API",
+                    title: "PlanIt API",
                     version: process.env.npm_package_version as string
                 },
                 components: {

@@ -5,13 +5,12 @@ import jwt from "@fastify/jwt";
 import Fastify from "fastify";
 import { loggerOptions } from "@config/logging.ts";
 import routes from "@routes/index.ts";
-import { serializerCompiler, validatorCompiler } from "fastify-type-provider-zod";
-import type { JsonSchemaToTsProvider } from '@fastify/type-provider-json-schema-to-ts'
-import { registerSwagger } from "./config/swagger.ts";
+import { registerSwagger } from "@config/swagger.ts";
+import { ProcessCode } from "@utils/enums.ts";
 
 const fastify = Fastify({
     logger: loggerOptions[env.NODE_ENV],
-}).withTypeProvider<JsonSchemaToTsProvider>();
+});
 
 // INFO: Add schema validator and serializer
 // fastify.setValidatorCompiler(validatorCompiler);
@@ -40,5 +39,5 @@ try {
     await fastify.listen({ port: env.PORT });
 } catch (err) {
     console.error(err);
-    process.exit(1);
+    process.exit(ProcessCode.ERROR);
 }

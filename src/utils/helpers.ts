@@ -26,22 +26,7 @@ export function makeUrl(root: string, endpoint: string): string {
     return url.toString();
 }
 
-export function generateCode(): string {
-    return crypto.randomInt(100000, 999999).toString();
-}
-
-export function isValidEmail(email: string): boolean {
-    // INFO: Regular expression for validating email
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-    if (!emailRegex.test(email)) {
-        return false;
-    }
-
-    const domain = email.split('@')[1];
-    // TODO: Add more allowed domains
-    const allowedDomains = ['gmail.com', 'yandex.ru', 'icloud.com']
-
-    return allowedDomains.includes(domain);
+export function generateCode(): number {
+    return crypto.randomInt(100000, 999999);
 }
 

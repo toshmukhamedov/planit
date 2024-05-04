@@ -2,7 +2,7 @@ import { AppStage } from "@src/utils/enums.ts";
 import type { FastifyServerOptions } from "fastify";
 
 export const loggerOptions: Record<AppStage, FastifyServerOptions["logger"]> = {
-    [AppStage.DEV]: {
+    [AppStage.Dev]: {
         transport: {
             target: "pino-pretty",
             options: {
@@ -11,6 +11,6 @@ export const loggerOptions: Record<AppStage, FastifyServerOptions["logger"]> = {
             },
         },
     },
-    [AppStage.TEST]: true,
-    [AppStage.PROD]: true,
+    [AppStage.Test]: true,
+    [AppStage.Prod]: true,
 };

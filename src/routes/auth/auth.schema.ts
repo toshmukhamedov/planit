@@ -1,32 +1,33 @@
 import type { FastifySchema } from "fastify";
-import { z } from "zod";
 import { Type, type Static } from "@sinclair/typebox";
 
 const baseSchema = {
     tags: ["auth"],
 } satisfies FastifySchema;
 
-// INFO: /auth
-// const authBody = z.object({
-//     email: z.string().email(),
-//     code: z.string().min(6).max(6),
-// });
+/* 
+ * INFO: /auth
+ */
 const authBody = Type.Object({
     email: Type.String({ format: "email" }),
-    code: Type.String({ minLength: 6, maxLength: 6 }),
+    code: Type.Number({ minimum: 100000, maximum: 999999 }),
 });
-export type AuthBody = Static<typeof authBody>;
 export const authSchema = {
     body: authBody,
     ...baseSchema,
 } satisfies FastifySchema;
+export type AuthSchema = typeof authSchema;
+export type AuthBody = Static<typeof authBody>;
 
-// INFO: /auth/send-code
-const sendVerificationCodeBody = z.object({
-    email: z.string().email(),
+/* 
+ * INFO: /auth/verification/code
+ */
+const sendVerificationCodeBody = Type.Object({
+    email: Type.String({ format: "email" }),
 });
-export type SendVerificationCodeBody = z.infer<typeof sendVerificationCodeBody>;
-export const sendVerificationCodeSchema = {
+export const sendOtpSchema = {
     body: sendVerificationCodeBody,
     ...baseSchema,
 } satisfies FastifySchema;
+export type SendVerificationCodeSchema = typeof sendOtpSchema;
+export type SendVerificationCodeBody = Static<typeof sendVerificationCodeBody>;

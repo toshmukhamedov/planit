@@ -4,7 +4,7 @@ import { integer, pgEnum, pgTable, serial, text, varchar } from "drizzle-orm/pg-
 import { groups } from "./groups.ts";
 import { users } from "./users.ts";
 
-export const statusEnum = pgEnum("status", [ListItemStatus.BOUGHT, ListItemStatus.ACTUAL, ListItemStatus.FUTURE]);
+export const statusEnum = pgEnum("status", [ListItemStatus.Bought, ListItemStatus.Actual, ListItemStatus.Future]);
 
 export const listItems = pgTable("list_items", {
     id: serial("id").primaryKey(),

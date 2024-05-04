@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Code Email</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .header {
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .content {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+
+      .footer {
+        text-align: center;
+        padding-top: 20px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Your One-Time Password</h2>
+      </div>
+      <div class="content">
+        <p>Hello,</p>
+        <p>You have requested a one-time password to verify your email address.</p>
+        <h3>{{code}}</h3>
+        <p>Please enter this code in the appropriate field to complete the verification process.</p>
+        <p>
+          <strong>Note:</strong> This code is valid for a limited time and should not be shared with anyone.
+        </p>
+        <p>Thank you for choosing <strong>PlanIt</strong>. </p>
+      </div>
+      <div class="footer">
+        <p>Best regards, <br>PlanIt Team </p>
+      </div>
+    </div>
+  </body>
+</html>
