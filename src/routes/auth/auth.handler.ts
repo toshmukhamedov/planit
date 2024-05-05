@@ -28,10 +28,12 @@ export async function authHandler(request: FastifyRequest<AuthSchema>, reply: Fa
         return reply.code(HttpStatus.BAD_REQUEST).send({ message: "Invalid code" });
     }
 
+    const [name] = body.email.split("@");
     const [user] = await db
         .insert(users)
         .values({
             email: body.email,
+            name
         })
         .returning({
             id: users.id,

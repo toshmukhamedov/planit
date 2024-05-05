@@ -1,9 +1,8 @@
 import { base } from "@utils/base.schema.ts";
-import { timestamp, integer, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { timestamp, integer, pgTable, varchar } from "drizzle-orm/pg-core";
 import { users } from "./users.ts";
 
 export const verificationCodes = pgTable("verification_codes", {
-    id: serial("id").primaryKey(),
     userId: integer("user_id")
         .references(() => users.id),
     code: integer("code").notNull(),

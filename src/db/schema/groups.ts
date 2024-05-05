@@ -1,9 +1,8 @@
 import { base } from "@utils/base.schema.ts";
-import { integer, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { integer, pgTable, varchar } from "drizzle-orm/pg-core";
 import { users } from "./users.ts";
 
 export const groups = pgTable("groups", {
-    id: serial("id").primaryKey(),
     name: varchar("name", { length: 64 }).notNull(),
     image: varchar("image", { length: 256 }),
     userId: integer("user_id")
