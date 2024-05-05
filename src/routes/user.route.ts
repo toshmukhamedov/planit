@@ -1,6 +1,6 @@
 import type { FastifyPluginAsync } from "fastify";
 
-const userRoutes: FastifyPluginAsync = async (fastify, options) => {
+const userRoutes: FastifyPluginAsync = async (fastify) => {
     fastify.post("/users", async (request, reply) => {
         reply.send({ hello: "post" });
     });

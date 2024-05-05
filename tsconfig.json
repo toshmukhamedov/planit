@@ -10,7 +10,8 @@
         "paths": {
             "@src/*": ["./*"],
             "@config/*": ["./config/*"],
-            "@modules/*": ["./modules/*"],
+            "@routes/*": ["./routes/*"],
+            "@hooks/*": ["./hooks/*"],
             "@utils/*": ["./utils/*"],
             "@test/*": ["./test/*"],
             "@db/*": ["./db/*"]
@@ -25,7 +26,6 @@
         /* Interop Constraints */
         "isolatedModules": true,
         "esModuleInterop": true,
-        "preserveSymlinks": true,
         /* Type Checking */
         "strict": true,
         /* Completeness */
