@@ -1,8 +1,8 @@
-import type { FastifyInstance } from "fastify";
 import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
-import { env } from "./env.ts";
 import { AppStage } from "@src/utils/enums.ts";
+import type { FastifyInstance } from "fastify";
+import { env } from "./env.ts";
 
 export async function registerSwagger(fastify: FastifyInstance) {
     if (env.NODE_ENV !== AppStage.Prod) {
@@ -10,7 +10,7 @@ export async function registerSwagger(fastify: FastifyInstance) {
             openapi: {
                 info: {
                     title: "PlanIt API",
-                    version: process.env.npm_package_version as string
+                    version: process.env.npm_package_version as string,
                 },
                 components: {
                     securitySchemes: {
@@ -18,10 +18,10 @@ export async function registerSwagger(fastify: FastifyInstance) {
                             type: "http",
                             scheme: "bearer",
                             bearerFormat: "jwt",
-                            description: "JSON Web Token"
+                            description: "JSON Web Token",
                         },
                     },
-                }
+                },
             },
         });
         await fastify.register(swaggerUI, {

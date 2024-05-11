@@ -15,13 +15,10 @@ export async function comparePassword(password: string, hash: string): Promise<b
 }
 
 export function makeUrl(root: string, endpoint: string): string {
-    const url = root.match(/^http(?:s?)/)
-        ? new URL(endpoint, root)
-        : new URL(endpoint, `https://${root}`);
+    const url = root.match(/^http(?:s?)/) ? new URL(endpoint, root) : new URL(endpoint, `https://${root}`);
     return url.toString();
 }
 
 export function generateCode(): number {
     return crypto.randomInt(100000, 999999);
 }
-

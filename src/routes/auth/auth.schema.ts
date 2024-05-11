@@ -1,5 +1,5 @@
+import { type Static, Type } from "@sinclair/typebox";
 import type { FastifySchema } from "fastify";
-import { Type, type Static } from "@sinclair/typebox";
 
 const baseSchema = {
     tags: ["auth"],

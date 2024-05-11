@@ -24,11 +24,10 @@ test("makeUrl", () => {
     expect(helpers.makeUrl("https://test.domain/", "/test")).toBe("https://test.domain/test");
     expect(helpers.makeUrl("https://test.domain", "/test")).toBe("https://test.domain/test");
     expect(helpers.makeUrl("test.domain", "/test")).toBe("https://test.domain/test");
-})
+});
 
 test("generateCode", () => {
     const code = helpers.generateCode();
     expect(code).toHaveLength(6);
     expect(Number(code)).not.toBeNaN();
-})
-
+});

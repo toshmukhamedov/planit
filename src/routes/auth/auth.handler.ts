@@ -1,13 +1,13 @@
 import { db } from "@src/db/client.ts";
 import { users } from "@src/db/schema/users.ts";
-import * as sql from "drizzle-orm/sql";
-import { generateCode } from "@src/utils/helpers.ts";
 import { verificationCodes } from "@src/db/schema/verification-codes.ts";
+import { EmailTemplate, HttpStatus } from "@src/utils/enums.ts";
+import { generateCode } from "@src/utils/helpers.ts";
 import type { FastifyReply, FastifyRequest } from "@utils/types.ts";
+import * as sql from "drizzle-orm/sql";
+import { emailService } from "integrations/email.service.ts";
 import type { AuthSchema, SendVerificationCodeSchema } from "./auth.schema.ts";
 import type { TokenPayload } from "./types.ts";
-import { EmailTemplate, HttpStatus } from "@src/utils/enums.ts";
-import { emailService } from "integrations/email.service.ts";
 
 export async function authHandler(request: FastifyRequest<AuthSchema>, reply: FastifyReply<AuthSchema>) {
     const { body } = request;
@@ -22,7 +22,7 @@ export async function authHandler(request: FastifyRequest<AuthSchema>, reply: Fa
                 sql.isNull(verificationCodes.verifiedAt),
                 sql.gt(verificationCodes.createdAt, sql.sql`now() - interval '2 minutes'`),
             ),
-        )
+        );
 
     if (!verificationCode) {
         return reply.code(HttpStatus.BAD_REQUEST).send({ message: "Invalid code" });
@@ -33,7 +33,7 @@ export async function authHandler(request: FastifyRequest<AuthSchema>, reply: Fa
         .insert(users)
         .values({
             email: body.email,
-            name
+            name,
         })
         .returning({
             id: users.id,

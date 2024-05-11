@@ -1,15 +1,15 @@
+import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
+import type { TokenPayload } from "@src/routes/auth/types.ts";
 import type {
     FastifyReply as BaseFastifyReply,
     FastifyRequest as BaseFastifyRequest,
+    ContextConfigDefault,
+    RawReplyDefaultExpression,
     RawRequestDefaultExpression,
     RawServerDefault,
-    RawReplyDefaultExpression,
-    ContextConfigDefault,
 } from "fastify";
-import type { FastifySchema } from "fastify/types/schema.d.ts";
 import type { RouteGenericInterface } from "fastify/types/route.d.ts";
-import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
-import type { TokenPayload } from "@src/routes/auth/types.ts";
+import type { FastifySchema } from "fastify/types/schema.d.ts";
 
 declare module "fastify" {
     export interface FastifyContextConfig {
