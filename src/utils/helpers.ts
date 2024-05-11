@@ -2,11 +2,6 @@ import * as crypto from "node:crypto";
 import { promisify } from "node:util";
 const scrypt = promisify(crypto.scrypt);
 
-export function validateBearerToken(authorization?: string): string | false {
-    const [type, token] = authorization?.split(" ") ?? [];
-    return (type === "Bearer" && token) || false;
-}
-
 export async function hashPassword(password: string): Promise<string> {
     const salt = crypto.randomBytes(8).toString("hex");
     const genHash = ((await scrypt(password, salt, 16)) as Buffer).toString("hex");

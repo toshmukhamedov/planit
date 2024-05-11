@@ -1,4 +1,4 @@
-import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
+import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 import type { FastifyPluginAsync } from "fastify";
 import { authHandler, sendVerificationCodeHandler } from "./auth.handler.ts";
 import { authSchema, sendOtpSchema } from "./auth.schema.ts";
@@ -12,7 +12,7 @@ const authRoutes: FastifyPluginAsync = async (instance) => {
             config: {
                 public: true,
             },
-            schema: authSchema
+            schema: authSchema,
         },
         authHandler,
     );
