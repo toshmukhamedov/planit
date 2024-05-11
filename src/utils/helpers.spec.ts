@@ -28,6 +28,6 @@ test("makeUrl", () => {
 
 test("generateCode", () => {
     const code = helpers.generateCode();
-    expect(code).toHaveLength(6);
-    expect(Number(code)).not.toBeNaN();
+    expect(code).toBeGreaterThanOrEqual(100000);
+    expect(code).toBeLessThanOrEqual(999999);
 });
