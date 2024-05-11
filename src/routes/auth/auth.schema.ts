@@ -1,11 +1,11 @@
+import { type Static, Type } from "@sinclair/typebox";
 import type { FastifySchema } from "fastify";
-import { Type, type Static } from "@sinclair/typebox";
 
 const baseSchema = {
     tags: ["auth"],
 } satisfies FastifySchema;
 
-/* 
+/*
  * INFO: /auth
  */
 const authBody = Type.Object({
@@ -19,7 +19,7 @@ export const authSchema = {
 export type AuthSchema = typeof authSchema;
 export type AuthBody = Static<typeof authBody>;
 
-/* 
+/*
  * INFO: /auth/verification/code
  */
 const sendVerificationCodeBody = Type.Object({

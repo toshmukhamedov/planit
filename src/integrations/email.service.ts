@@ -1,14 +1,14 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import {
+    CreateEmailTemplateCommand,
+    GetEmailTemplateCommand,
     SESv2Client,
     SendEmailCommand,
-    GetEmailTemplateCommand,
-    CreateEmailTemplateCommand,
     type SendEmailCommandInput,
 } from "@aws-sdk/client-sesv2";
 import { env } from "@src/config/env.ts";
 import { EmailSubject, EmailTemplate } from "@src/utils/enums.ts";
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
 
 interface SendEmailContent {
     address: string;

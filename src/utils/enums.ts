@@ -10,8 +10,8 @@ export const enum ListItemStatus {
 }
 
 export const enum ProcessCode {
-  SUCCESS = 0,
-  ERROR = 1
+    SUCCESS = 0,
+    ERROR = 1,
 }
 
 export const enum HttpStatus {
@@ -62,13 +62,13 @@ export const enum HttpStatus {
     BAD_GATEWAY = 502,
     SERVICE_UNAVAILABLE = 503,
     GATEWAY_TIMEOUT = 504,
-    HTTP_VERSION_NOT_SUPPORTED = 505
+    HTTP_VERSION_NOT_SUPPORTED = 505,
 }
 
 export const enum EmailSubject {
-    VerificationCode = "Your Verification Code for PlanIt"
+    VerificationCode = "Your Verification Code for PlanIt",
 }
 
 export const enum EmailTemplate {
-    VerificationCode = "verification-code"
+    VerificationCode = "verification-code",
 }
