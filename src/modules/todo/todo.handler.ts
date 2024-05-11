@@ -47,6 +47,7 @@ export async function getTodoHandler(request: FastifyRequest<GetTodoSchema>, rep
     .where(sql.eq(listItems.id, params.id))
 
   reply.code(HttpStatus.OK).send(item)
+  reply.code(HttpStatus.OK).send(item)
 }
 
 export async function getTodoAllHandler(request: FastifyRequest<GetTodoAllSchema>, reply: FastifyReply<GetTodoAllSchema>) {
@@ -57,5 +58,6 @@ export async function getTodoAllHandler(request: FastifyRequest<GetTodoAllSchema
     .from(listItems)
     .where(sql.and(sql.eq(listItems.groupId, params.groupId), sql.isNull(listItems.deletedAt)))
 
+  reply.code(HttpStatus.OK).send(items)
   reply.code(HttpStatus.OK).send(items)
 }
