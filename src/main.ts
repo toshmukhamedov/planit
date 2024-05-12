@@ -4,7 +4,7 @@ import { registerSwagger } from "@config/swagger.ts";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
 import jwt from "@fastify/jwt";
-import routes from "@routes/index.ts";
+import routes from "@src/modules/index.ts";
 import { ProcessCode } from "@utils/enums.ts";
 import Fastify from "fastify";
 

@@ -1,5 +1,5 @@
 import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
-import type { TokenPayload } from "@src/routes/auth/types.ts";
+import type { TokenPayload } from "@src/modules/auth/types.ts";
 import type {
     FastifyReply as BaseFastifyReply,
     FastifyRequest as BaseFastifyRequest,
